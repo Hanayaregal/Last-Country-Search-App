@@ -30,10 +30,10 @@ class _CountryCardState extends State<CountryCard> {
         ? (widget.country['capital'] as List).join(', ')
         : 'N/A';
     final population = widget.country['population'] != null
-        ? (widget.country['population'] as int).toString().replaceAllMapped(
+        ? '${(widget.country['population'] as int).toString().replaceAllMapped(
       RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
           (Match m) => '${m[1]},',
-    )
+    )}'
         : 'N/A';
     final languages = widget.country['languages'] != null
         ? (widget.country['languages'] as Map).values.join(', ')
